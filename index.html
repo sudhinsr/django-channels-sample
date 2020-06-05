@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    
+    <script>
+        const chatSocket = new WebSocket(
+            'ws://localhost:5000/ws/notification/'
+        );
+
+        chatSocket.onmessage = function (e) {
+            alert(e.data);
+        };
+
+        chatSocket.onclose = function (e) {
+            console.log(e)
+            console.error('Chat socket closed unexpectedly');
+        };
+
+        chatSocket.onopen = () => {
+            console.log("connecting");
+            chatSocket.send("hello world");
+        }
+    </script>
+</body>
+
+</html>
