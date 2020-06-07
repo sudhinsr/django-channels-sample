@@ -15,9 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,re_path,include
-from tutorial.quickstart.views import ConsumerViewSet
+from tutorial.quickstart.views import TestViewSet
 
-view_set = ConsumerViewSet.as_view()
+view_set = TestViewSet.as_view()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
